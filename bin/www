@@ -5,14 +5,14 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('express:server');
+var debug = require('debug')('node:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3333');
 app.set('port', port);
 
 /**
@@ -83,9 +83,12 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
+  console.log(addr)
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  console.log(process.env, addr)
   debug('Listening on ' + bind);
 }
+
+var path = require('path');
+console.log(path.resolve(__dirname), '---', path.resolve('./'))
