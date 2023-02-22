@@ -28,8 +28,6 @@ router.post('/add', auth, async (req, res) => {
     }).catch(e => {
         resData.error(res, e);
     })
-
-
 })
 
 // 各人(包含root)查询自身任务列表

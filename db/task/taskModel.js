@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const {jwt, SECRET}= require('../db');
 const moment = require('moment');
 const { numToChinese } = require('../../utils/utils')
 
